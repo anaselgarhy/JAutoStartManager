@@ -12,7 +12,8 @@ public class LinuxAutoStartUnit extends AbstractAutoStartUnit {
 
     @Override
     public void addToAutoStart(File file) throws IOException {
-        super.addToAutoStart(DesktopFileCreator.creteDesktopFile(file.getName(), System.getProperty("user.home") + "/.local/share/applications"));
+        super.addToAutoStart(DesktopFileCreator.creteDesktopFile(file.getName(),
+                System.getProperty("user.home") + "/.local/share/applications"));
     }
 
     @Override
