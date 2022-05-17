@@ -5,6 +5,7 @@ import com.anas.jautostartmanager.exceptions.IsNotInAutoStartException;
 import com.anas.jautostartmanager.exceptions.OSIsNotSupportedException;
 import com.anas.jautostartmanager.units.AbstractAutoStartUnit;
 import com.anas.jautostartmanager.units.os.WinAutoStartUnit;
+import com.anas.jautostartmanager.units.os.linux.LinuxAutoStartUnit;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +20,8 @@ public class AutoStartManager {
     private static AbstractAutoStartUnit makeAutoStartUnit() {
         return switch (System.getProperty("os.name").toLowerCase()) {
             case "windows" -> new WinAutoStartUnit();
-            default -> null; // TODO: 5/15/22 add support for other OS (linux, mac)
+            case "linux" -> new LinuxAutoStartUnit();
+            default -> null; // TODO: 5/15/22 add support for other OS (mac)
         };
     }
 

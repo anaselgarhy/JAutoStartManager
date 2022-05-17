@@ -6,13 +6,13 @@ import java.io.File;
 import java.io.IOException;
 
 public class LinuxAutoStartUnit extends AbstractAutoStartUnit {
-    public LinuxAutoStartUnit(String autoStartPath) {
+    public LinuxAutoStartUnit() {
         super(System.getProperty("user.home") + "/.config/autostart");
     }
 
     @Override
     public void addToAutoStart(File file) throws IOException {
-        super.addToAutoStart(DesktopFileCreator.creteDesktopFile(file.getName(),
+        super.addToAutoStart(DesktopFileCreator.creteDesktopFile(file,
                 System.getProperty("user.home") + "/.local/share/applications"));
     }
 
