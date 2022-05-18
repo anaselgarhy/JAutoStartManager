@@ -6,8 +6,7 @@
 
     <groupId>com.anas.jautostartmanager</groupId>
     <artifactId>jautoatartmanager</artifactId>
-    <version>0.1.0</version>
-    <packaging>jar</packaging>
+    <version>0.1.1</version>
 
     <name>JAutoStartManager</name>
     <description>A Java library that helps you add auto-start programs, supports Mac, Windows, and Linux</description>
