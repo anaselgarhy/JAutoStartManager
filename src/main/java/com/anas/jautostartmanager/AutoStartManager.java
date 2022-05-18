@@ -25,7 +25,7 @@ public class AutoStartManager {
         };
     }
 
-    public void add(File file) throws IOException, IsInAutoStartException, OSIsNotSupportedException {
+    public static void add(File file) throws IOException, IsInAutoStartException, OSIsNotSupportedException {
         if (autoStartUnit == null)
             throw new OSIsNotSupportedException("AutoStartManager is not supported on this OS");
         if (autoStartUnit.isInAutoStartPrograms(file))
@@ -34,7 +34,7 @@ public class AutoStartManager {
         autoStartUnit.addToAutoStart(file);
     }
 
-    public boolean remove(File file) throws OSIsNotSupportedException, IsNotInAutoStartException {
+    public static boolean remove(File file) throws OSIsNotSupportedException, IsNotInAutoStartException {
         if (autoStartUnit == null)
             throw new OSIsNotSupportedException("AutoStartManager is not supported on this OS");
         if (autoStartUnit.isInAutoStartPrograms(file))
